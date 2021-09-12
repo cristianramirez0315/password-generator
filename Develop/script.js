@@ -67,13 +67,13 @@ function generatePassword(lower, upper, number, symbol, length) {
   const checkedBoxesArray = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0]);
 
 
-  // gurantee that you got every type
+  // guarantee that you got every type
   checkedBoxesArray.forEach(type => {
     const funcName = Object.keys(type)[0];
     password += randomFunctions[funcName]();
   });
 
-  // fill in the rest of the password til you get to length
+  // fill in the rest of the password till you get to length
   for (i = checkedBoxesArray.length; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * checkedBoxesArray.length);
     const randomType = checkedBoxesArray[randomIndex];
